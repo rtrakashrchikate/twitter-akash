@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: Mukta; src: url(Mukta-normal-500-devanagari.woff2); font-weight: 500; }
+  @font-face { font-family: Mukta; src: url(Mukta-normal-700-devanagari.woff2); font-weight: 700; }
+  @font-face { font-family: Mukta; src: url(Mukta-normal-800-devanagari.woff2); font-weight: 800; }
+  @font-face { font-family: Mukta; src: url(Mukta-normal-800-latin.woff2); font-weight: 800; unicode-range: U+0000-00FF; }
+  @font-face { font-family: Mukta; src: url(Mukta-normal-700-latin.woff2); font-weight: 700; unicode-range: U+0000-00FF; }
+  @font-face { font-family: Tiro; src: url(TiroDevanagariHindi-normal-400-devanagari.woff2); }
+  @font-face { font-family: Tiro; src: url(TiroDevanagariHindi-normal-400-latin.woff2); unicode-range: U+0000-00FF; }
+  :root { --gold: #F7C65A; --cream: #FFF2D6; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; background: #000; }
+  .poster { position: relative; width: 1080px; height: 1350px; overflow: hidden; font-family: Mukta, sans-serif; text-align: center; color: var(--cream); }
+  .bg { position: absolute; inset: 0; background: url(ai/a.png) center 62% / cover no-repeat; filter: contrast(1.06) saturate(1.08); }
+  .shade { position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(3,8,14,.92) 0%, rgba(3,8,14,.55) 16%, rgba(3,8,14,0) 30%),
+      linear-gradient(0deg, rgba(5,3,2,.97) 0%, rgba(5,3,2,.88) 14%, rgba(5,3,2,.35) 27%, rgba(5,3,2,0) 38%),
+      radial-gradient(ellipse 90% 75% at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%); }
+  .grain { position: absolute; inset: 0; opacity: .10; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>"); }
+
+  .kicker { position: absolute; top: 44px; width: 100%; font-weight: 700; font-size: 30px; letter-spacing: 0; color: var(--gold); opacity: .9; }
+  .kicker span { display: inline-block; width: 70px; height: 1px; background: var(--gold); vertical-align: middle; margin: 0 18px; opacity: .7; }
+  .title { position: absolute; top: 76px; width: 100%; font-weight: 800; font-size: 118px; line-height: 1.12; letter-spacing: 1px;
+    background: linear-gradient(180deg, #FFF6D8 0%, #FFD36B 42%, #E8901C 78%, #A44A08 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 0 22px rgba(255,120,20,.55)) drop-shadow(0 6px 10px rgba(0,0,0,.8)); }
+  .tag { position: absolute; top: 226px; width: 100%; font-family: Tiro; font-size: 40px; color: var(--cream); text-shadow: 0 3px 14px #000, 0 0 30px rgba(0,0,0,.9); }
+
+  .sona { position: absolute; top: 1018px; width: 100%; font-family: Tiro; font-size: 44px; color: var(--gold); text-shadow: 0 3px 14px #000; }
+  .wish { position: absolute; top: 1068px; width: 100%; font-weight: 800; font-size: 72px; color: #fff; line-height: 1.15; text-shadow: 0 0 26px rgba(255,120,20,.45), 0 4px 16px #000; }
+  .billing { position: absolute; left: 90px; right: 90px; top: 1186px; border-top: 1px solid rgba(247,198,90,.5); padding-top: 18px; }
+  .from { font-weight: 700; font-size: 40px; color: var(--cream); letter-spacing: .5px; }
+  .from b { color: var(--gold); font-weight: 800; }
+  .date { margin-top: 8px; font-weight: 500; font-size: 28px; letter-spacing: 0; color: rgba(255,242,214,.7); }
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="bg"></div>
+  <div class="shade"></div>
+  <div class="grain"></div>
+
+  <div class="kicker"><span></span>विजयादशमी २०२६<span></span></div>
+  <div class="title">दहा तोंडं. एकच बाण.</div>
+  <div class="tag">या दसऱ्याला, मनातल्या रावणावर नेम धरा.</div>
+
+  <div class="sona">सोनं घ्या, सोन्यासारखं राहा!</div>
+  <div class="wish">विजयादशमीच्या हार्दिक शुभेच्छा!</div>
+  <div class="billing">
+    <div class="from"><b>ॲड. आकाश चिकटे</b> आणि कुटुंबीयांकडून</div>
+    <div class="date">पुणे · २० ऑक्टोबर · घराघरात, मनामनात</div>
+  </div>
+</div>
+</body>
+</html>
