@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: Mukta; src: url(Mukta-normal-500-devanagari.woff2); font-weight: 500; }
+  @font-face { font-family: Mukta; src: url(Mukta-normal-700-devanagari.woff2); font-weight: 700; }
+  @font-face { font-family: Mukta; src: url(Mukta-normal-700-latin.woff2); font-weight: 700; unicode-range: U+0000-00FF; }
+  @font-face { font-family: Mukta; src: url(Mukta-normal-800-devanagari.woff2); font-weight: 800; }
+  @font-face { font-family: Mukta; src: url(Mukta-normal-800-latin.woff2); font-weight: 800; unicode-range: U+0000-00FF; }
+  @font-face { font-family: Tiro; src: url(TiroDevanagariHindi-normal-400-devanagari.woff2); }
+  @font-face { font-family: Tiro; src: url(TiroDevanagariHindi-italic-400-devanagari.woff2); font-style: italic; }
+  @font-face { font-family: Grotesk; src: url(SpaceGrotesk-latin.woff2); font-weight: 300 700; }
+  :root { --gold: #F2C14E; --gold2: #FFE3A0; --cream: #FFF4DC; --maroon: #6E0B12; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; background: #2A0508; }
+  .card {
+    position: relative; width: 1080px; height: 1350px; overflow: hidden;
+    background: radial-gradient(ellipse 70% 55% at 50% 36%, #A3161F 0%, #6E0B12 45%, #2A0508 100%);
+    font-family: Mukta, sans-serif; color: var(--cream); text-align: center;
+  }
+  svg.layer { position: absolute; inset: 0; }
+  .frame { position: absolute; inset: 22px; border: 3px solid var(--gold); border-radius: 18px; }
+  .frame::after { content: ""; position: absolute; inset: 9px; border: 1px solid rgba(242,193,78,0.55); border-radius: 12px; }
+  .t1 { position: absolute; top: 640px; width: 100%; font-family: Tiro; font-size: 74px; color: var(--cream); text-shadow: 0 4px 18px rgba(0,0,0,.5); }
+  .t2 {
+    position: absolute; top: 718px; width: 100%; font-weight: 800; font-size: 124px; line-height: 1.15;
+    background: linear-gradient(180deg, #FFF1C4 0%, #F2C14E 55%, #C98A1B 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,.45));
+  }
+  .div { position: absolute; top: 885px; left: 50%; transform: translateX(-50%); }
+  .t3 { position: absolute; top: 918px; width: 100%; font-weight: 700; font-size: 56px; color: var(--cream); }
+  .t4 { position: absolute; top: 1000px; width: 100%; font-family: Tiro; font-style: italic; font-size: 40px; color: var(--gold); }
+  .band {
+    position: absolute; left: 22px; right: 22px; bottom: 22px; height: 205px;
+    background: linear-gradient(180deg, rgba(20,3,6,0) 0%, rgba(20,3,6,.85) 30%, rgba(20,3,6,.95) 100%);
+    border-radius: 0 0 18px 18px;
+  }
+  .name { position: absolute; bottom: 128px; width: 100%; font-weight: 800; font-size: 58px; color: #fff; letter-spacing: .5px; }
+  .sub { position: absolute; bottom: 86px; width: 100%; font-weight: 500; font-size: 32px; color: var(--cream); opacity: .9; }
+  .motto { position: absolute; bottom: 44px; width: 100%; font-family: Tiro; font-size: 30px; color: var(--gold); }
+  .handle { position: absolute; bottom: 47px; right: 60px; font-family: Grotesk; font-weight: 500; font-size: 22px; color: rgba(255,244,220,.7); }
+</style>
+</head>
+<body>
+<div class="card">
+  <svg class="layer" id="art" viewBox="0 0 1080 1350" width="1080" height="1350"></svg>
+  <div class="frame"></div>
+  <div class="t1">विजयादशमीच्या</div>
+  <div class="t2">हार्दिक शुभेच्छा!</div>
+  <svg class="div" width="520" height="24" viewBox="0 0 520 24">
+    <line x1="10" y1="12" x2="225" y2="12" stroke="#F2C14E" stroke-width="2"/>
+    <line x1="295" y1="12" x2="510" y2="12" stroke="#F2C14E" stroke-width="2"/>
+    <path d="M260,2 L272,12 L260,22 L248,12 Z" fill="#F2C14E"/>
+    <circle cx="234" cy="12" r="4" fill="#F2C14E"/><circle cx="286" cy="12" r="4" fill="#F2C14E"/>
+  </svg>
+  <div class="t3">सोनं घ्या, सोन्यासारखं राहा!</div>
+  <div class="t4">असत्यावर सत्याचा विजय होवो</div>
+  <div class="band"></div>
+  <div class="name">ॲड. आकाश चिकटे</div>
+  <div class="sub">आणि कुटुंबीयांकडून · पुणे</div>
+  <div class="motto">॥ सत्यमेव जयते ॥</div>
+</div>
+<script>
+const NS = "http://www.w3.org/2000/svg";
+const art = document.getElementById("art");
+const el = (tag, attrs, parent = art) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent.appendChild(e); return e; };
+
+const defs = el("defs", {});
+defs.innerHTML = `
+  <radialGradient id="mari" cx="50%" cy="45%" r="55%"><stop offset="0%" stop-color="#FFD54A"/><stop offset="60%" stop-color="#FF9F1C"/><stop offset="100%" stop-color="#E06A00"/></radialGradient>
+  <radialGradient id="mariY" cx="50%" cy="45%" r="55%"><stop offset="0%" stop-color="#FFF08A"/><stop offset="70%" stop-color="#FFC81E"/><stop offset="100%" stop-color="#E9A100"/></radialGradient>
+  <linearGradient id="goldLeaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFF1C4"/><stop offset="45%" stop-color="#F2C14E"/><stop offset="100%" stop-color="#B9790F"/></linearGradient>
+  <linearGradient id="greenLeaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7BC96F"/><stop offset="100%" stop-color="#2E7D32"/></linearGradient>
+  <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#FFD27A" stop-opacity=".55"/><stop offset="100%" stop-color="#FFD27A" stop-opacity="0"/></radialGradient>`;
+
+// mandala rings behind the art
+const cx = 540, cy = 410;
+el("circle", { cx, cy, r: 300, fill: "url(#halo)" });
+[150, 205, 260, 315].forEach((r, i) => el("circle", { cx, cy, r, fill: "none", stroke: "#F2C14E", "stroke-opacity": 0.16, "stroke-width": i % 2 ? 2 : 1, "stroke-dasharray": i % 2 ? "2 10" : "none" }));
+for (let k = 0; k < 24; k++) {
+  const a = (k / 24) * Math.PI * 2;
+  const g = el("g", { transform: `translate(${cx + Math.cos(a) * 232},${cy + Math.sin(a) * 232}) rotate(${(a * 180) / Math.PI + 90})` });
+  el("path", { d: "M0,-14 C8,-4 8,4 0,14 C-8,4 -8,-4 0,-14 Z", fill: "#F2C14E", "fill-opacity": 0.22 }, g);
+}
+
+// bow + arrow (Ram ka dhanush)
+const bow = el("g", { transform: `translate(${cx},${cy - 10}) rotate(-28) scale(0.8)` });
+el("path", { d: "M-20,-270 Q-215,0 -20,270", fill: "none", stroke: "#F2C14E", "stroke-width": 16, "stroke-linecap": "round" }, bow);
+el("path", { d: "M-20,-270 Q-215,0 -20,270", fill: "none", stroke: "#FFF1C4", "stroke-width": 4, "stroke-opacity": .6 }, bow);
+el("line", { x1: -20, y1: -270, x2: -20, y2: 270, stroke: "#FFF4DC", "stroke-width": 3, "stroke-opacity": .85 }, bow);
+[-120, 0, 120].forEach((y) => el("rect", { x: -138 + Math.abs(y) * 0.45, y: y - 10, width: 24, height: 20, rx: 4, fill: "#C8102E" }, bow));
+el("line", { x1: -60, y1: 0, x2: 330, y2: 0, stroke: "#F2C14E", "stroke-width": 8 }, bow);
+el("path", { d: "M330,-20 L380,0 L330,20 Z", fill: "#FFE3A0", stroke: "#B9790F", "stroke-width": 2 }, bow);
+el("path", { d: "M-60,0 L-95,-22 L-75,0 L-95,22 Z M-40,0 L-75,-22 L-55,0 L-75,22 Z", fill: "#C8102E" }, bow);
+
+// apta leaves (sona) — twin-lobed
+const leaf = (x, y, s, rot, fill, vein) => {
+  const g = el("g", { transform: `translate(${x},${y}) rotate(${rot}) scale(${s})` });
+  el("path", { d: "M0,92 C-46,88 -104,46 -100,-22 C-96,-88 -36,-104 -10,-48 C-6,-36 -2,-22 0,-12 C2,-22 6,-36 10,-48 C36,-104 96,-88 100,-22 C104,46 46,88 0,92 Z", fill, stroke: vein, "stroke-width": 2.5 }, g);
+  el("path", { d: "M0,90 L0,-10 M0,40 C-30,25 -62,8 -82,-20 M0,40 C30,25 62,8 82,-20 M0,10 C-20,-10 -38,-38 -50,-72 M0,10 C20,-10 38,-38 50,-72", fill: "none", stroke: vein, "stroke-width": 2.5, "stroke-opacity": .7 }, g);
+  el("path", { d: "M0,95 L0,140", stroke: "#5D3A12", "stroke-width": 6, "stroke-linecap": "round" }, g);
+};
+leaf(cx - 118, cy + 40, 1.0, -32, "url(#greenLeaf)", "#1B5E20");
+leaf(cx + 118, cy + 40, 1.0, 32, "url(#greenLeaf)", "#1B5E20");
+leaf(cx, cy - 14, 1.3, 0, "url(#goldLeaf)", "#8A5A0B");
+// sparkles
+[[cx - 205, cy - 175, 1], [cx + 215, cy - 150, .8], [cx + 185, cy + 165, .7], [cx - 230, cy + 140, .6], [cx + 30, cy - 205, .55]].forEach(([x, y, s]) => {
+  el("path", { d: "M0,-22 L5,-5 L22,0 L5,5 L0,22 L-5,5 L-22,0 L-5,-5 Z", fill: "#FFF1C4", transform: `translate(${x},${y}) scale(${s})` });
+});
+
+// marigold toran
+const flower = (x, y, r, grad) => {
+  const g = el("g", { transform: `translate(${x},${y})` });
+  for (let k = 0; k < 12; k++) {
+    const a = (k / 12) * Math.PI * 2;
+    el("circle", { cx: Math.cos(a) * r * 0.72, cy: Math.sin(a) * r * 0.72, r: r * 0.42, fill: grad }, g);
+  }
+  el("circle", { cx: 0, cy: 0, r: r * 0.62, fill: grad }, g);
+  el("circle", { cx: 0, cy: 0, r: r * 0.2, fill: "#C25400", "fill-opacity": .6 }, g);
+};
+el("path", { d: "M22,40 Q540,95 1058,40", fill: "none", stroke: "#8B5A2B", "stroke-width": 4 });
+const N = 13;
+for (let i = 0; i < N; i++) {
+  const x = 40 + (i * 1000) / (N - 1);
+  const t = x / 1080;
+  const yTop = 40 + 4 * 55 * t * (1 - t);
+  const len = i % 2 ? 3 : 5;
+  for (let j = 0; j < len; j++) flower(x, yTop + 6 + j * 26, 15, (i + j) % 2 ? "url(#mari)" : "url(#mariY)");
+  // mango leaf between strands
+  if (i < N - 1) {
+    const xm = x + 1000 / (N - 1) / 2, tm = xm / 1080, ym = 40 + 4 * 55 * tm * (1 - tm);
+    el("path", { d: `M${xm},${ym} C${xm - 14},${ym + 20} ${xm - 8},${ym + 44} ${xm},${ym + 58} C${xm + 8},${ym + 44} ${xm + 14},${ym + 20} ${xm},${ym} Z`, fill: "#2E7D32", stroke: "#1B5E20", "stroke-width": 1.5 });
+  }
+}
+// corner flower clusters at bottom of art area
+[[90, 1080], [990, 1080]].forEach(([x, y]) => { flower(x, y, 22, "url(#mari)"); flower(x + (x < 540 ? 34 : -34), y + 20, 16, "url(#mariY)"); });
+</script>
+</body>
+</html>
