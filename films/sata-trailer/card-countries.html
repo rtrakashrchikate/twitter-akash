@@ -1,0 +1,11 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="shared.css">
+<style> body{background:#000} #w{font-family:Tiro;font-size:104px;color:var(--paper);letter-spacing:2px} </style></head>
+<body><div class="center"><div id="w">दोन देश.</div></div>
+<script type="module">
+import { ramp, fontsReady } from "./shared.js";
+const w = document.getElementById("w"); const D = 1;
+window.film = { duration: D, ready: fontsReady(), frame(t) {
+  const o = Math.min(ramp(t, 0, 0.17), 1 - ramp(t, D - 0.17, D));
+  w.style.opacity = o; w.style.transform = `scale(${1.08 - 0.08 * (t / D)})`;
+} };
+</script></body></html>

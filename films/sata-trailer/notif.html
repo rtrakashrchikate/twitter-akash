@@ -1,0 +1,11 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="shared.css">
+<style> body{background:#05070a}
+#n{position:absolute;left:50px;right:50px;top:780px;padding:24px 26px;border-radius:28px;background:rgba(245,245,247,.97);display:flex;gap:20px;box-shadow:0 0 80px rgba(120,160,255,.35);font-family:Grotesk;color:#111}
+#i{width:80px;height:80px;border-radius:18px;background:#EA4335;display:flex;align-items:center;justify-content:center;font-size:46px;flex-shrink:0}
+.a{font-weight:700;font-size:32px}.b{font-weight:600;font-size:30px;margin-top:4px}.c{font-weight:500;font-size:28px;color:#555;margin-top:4px}</style></head>
+<body><div id="n"><div id="i">✉️</div><div><div class="a">Ontario Superior Court of Justice</div><div class="b">Application for Divorce</div><div class="c">Applicant: Aditya Kulkarni</div></div></div>
+<script type="module">
+import { ramp, easeOut, fontsReady } from "./shared.js";
+const n = document.getElementById("n");
+window.film = { duration: 0.9, ready: fontsReady(), frame(t) { n.style.transform = `translateY(${(1 - easeOut(ramp(t, 0, 0.3))) * -200}px)`; } };
+</script></body></html>

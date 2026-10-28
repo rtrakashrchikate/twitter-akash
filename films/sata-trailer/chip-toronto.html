@@ -1,0 +1,9 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="shared.css">
+<style> html,body{width:600px;height:80px} #c{font-family:Mukta;font-weight:700;font-size:34px;color:#fff;text-shadow:0 2px 10px #000;padding-top:16px} </style></head>
+<body><div id="c"></div>
+<script type="module">
+import { ramp, fontsReady } from "./shared.js";
+const c = document.getElementById("c");
+c.textContent = "टोरंटो · दुपारी 4:37";
+window.film = { width: 600, height: 80, ready: fontsReady(), frame(t) { c.style.opacity = ramp(t, 0.2, 0.47); } };
+</script></body></html>

@@ -1,0 +1,9 @@
+@font-face { font-family: Mukta; src: url(assets/fonts/Mukta-normal-500-devanagari.woff2); font-weight: 500; }
+@font-face { font-family: Mukta; src: url(assets/fonts/Mukta-normal-700-devanagari.woff2); font-weight: 700; }
+@font-face { font-family: Mukta; src: url(assets/fonts/Mukta-normal-800-devanagari.woff2); font-weight: 800; }
+@font-face { font-family: Tiro; src: url(assets/fonts/TiroDevanagariHindi-normal-400-devanagari.woff2); }
+@font-face { font-family: Grotesk; src: url(assets/fonts/SpaceGrotesk-latin.woff2); font-weight: 300 700; }
+:root { --gold: #E8B64C; --paper: #F4F1EA; }
+html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+* { box-sizing: border-box; }
+.center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }

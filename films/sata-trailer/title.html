@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="shared.css">
+<style> body{background:radial-gradient(ellipse 70% 50% at 50% 48%,#1a1206 0%,#000 70%)}
+#by{font-family:Mukta;font-weight:600;font-size:30px;letter-spacing:6px;color:rgba(244,241,234,.7)}
+#t{margin-top:18px;font-family:Tiro;font-size:150px;line-height:1.1;background:linear-gradient(180deg,#fff3cf 0%,#e8b64c 55%,#a8721c 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+#s{margin-top:6px;font-family:Tiro;font-size:46px;color:var(--paper)}
+#c{margin-top:40px;display:inline-block;font-family:Mukta;font-weight:800;font-size:38px;color:#000;background:var(--gold);padding:4px 26px;border-radius:8px}</style></head>
+<body><div class="center"><div id="box"><div id="by">ADV. AKASH CHIKATE प्रस्तुत</div><div id="t">सातासमुद्रापार</div><div id="s">एक घटस्फोट… जो सोपा नव्हता.</div><div id="c">3 भागांची मराठी मालिका · लवकरच</div></div></div>
+<script type="module">
+import { ramp, fontsReady } from "./shared.js";
+const [box, by, t1, s, c] = ["box", "by", "t", "s", "c"].map((id) => document.getElementById(id));
+window.film = { duration: 6.6, ready: fontsReady(), frame(t) {
+  const a = ramp(t, 0, 0.6);
+  by.style.opacity = a; t1.style.opacity = a;
+  t1.style.filter = `drop-shadow(0 0 ${40 - 26 * ramp(t, 0, 1)}px rgba(232,182,76,.6))`;
+  s.style.opacity = ramp(t, 1, 1.47); c.style.opacity = ramp(t, 1.73, 2.2);
+  box.style.transform = `scale(${1.12 - 0.12 * (t / 6.6)})`;
+} };
+</script></body></html>
